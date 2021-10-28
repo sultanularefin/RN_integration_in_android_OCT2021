@@ -7,4 +7,7 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "AndroidRootNavigation2"
+//To use the power of autolinking, we have to apply it a few places. First add the following entry to settings.gradle:
+apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
+
 include ':app'
