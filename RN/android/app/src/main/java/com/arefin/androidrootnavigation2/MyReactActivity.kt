@@ -17,8 +17,26 @@ import com.facebook.react.modules.core.DefaultHardwareBackBtnHandler
 import android.app.Activity
 import android.view.KeyEvent
 import androidx.viewbinding.BuildConfig
-//import com.facebook.react.PackageList;
+import com.facebook.react.PackageList;
 
+
+
+//0000
+
+import com.facebook.flipper.*;
+//import com.facebook.flipper.android.utils.FlipperUtils;
+//import com.facebook.flipper.core.FlipperClient;
+//import com.facebook.flipper.plugins.crashreporter.CrashReporterPlugin;
+//import com.facebook.flipper.plugins.databases.DatabasesFlipperPlugin;
+//import com.facebook.flipper.plugins.fresco.FrescoFlipperPlugin;
+//import com.facebook.flipper.plugins.inspector.DescriptorMapping;
+//import com.facebook.flipper.plugins.inspector.InspectorFlipperPlugin;
+//import com.facebook.flipper.plugins.network.FlipperOkhttpInterceptor;
+//import com.facebook.flipper.plugins.network.NetworkFlipperPlugin;
+//import com.facebook.flipper.plugins.react.ReactFlipperPlugin;
+//import com.facebook.flipper.plugins.sharedpreferences.SharedPreferencesFlipperPlugin;
+
+//0000
 
 class MyReactActivity : Activity(), DefaultHardwareBackBtnHandler {
     private var mReactRootView: ReactRootView? = null

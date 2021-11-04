@@ -18,6 +18,17 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Build
 import android.provider.Settings
+import com.facebook.react.ReactInstanceManager
+
+
+//flipper
+
+import com.facebook.flipper.android.AndroidFlipperClient;
+import com.facebook.flipper.android.utils.FlipperUtils;
+import com.facebook.flipper.core.FlipperClient;
+import com.facebook.flipper.plugins.inspector.DescriptorMapping;
+import com.facebook.flipper.plugins.inspector.InspectorFlipperPlugin;
+//flipper
 
 class MainActivity : AppCompatActivity() {
 
@@ -25,6 +36,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
     //private final int OVERLAY_PERMISSION_REQ_CODE = 1;  // Choose any value
     private val OVERLAY_PERMISSION_REQ_CODE = 1 // Choose any value
+    private var mReactInstanceManager: ReactInstanceManager? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,6 +69,12 @@ class MainActivity : AppCompatActivity() {
 
 
 
+
+        if (BuildConfig.DEBUG && FlipperUtils.shouldEnableFlipper(this)) {
+            val client: FlipperClient = AndroidFlipperClient.getInstance(this)
+            client.addPlugin(InspectorFlipperPlugin(this, DescriptorMapping.withDefaults()))
+            client.start()
+        }
 
 
 //        java code
@@ -113,7 +131,7 @@ class MainActivity : AppCompatActivity() {
                     }
                 }
             }
-            mReactInstanceManager.onActivityResult(this, requestCode, resultCode, data)
+        mReactInstanceManager?.onActivityResult(this, requestCode, resultCode, data)
         }
 
         // converted android code kotlin november 04-2021  above
